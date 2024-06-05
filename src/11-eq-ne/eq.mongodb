@@ -1,0 +1,11 @@
+use("platzi_store")
+
+//Usandp $eq
+// Implicita
+// db.inventory.find({ qty: 20 })
+// Explicita
+// db.inventory.find({ qty: { $eq: 20 } })
+// Implicita
+// db.inventory.find({ "item.name": "cd" })
+// Explicita
+db.inventory.find({ "item.name": { $eq: "cd" } })

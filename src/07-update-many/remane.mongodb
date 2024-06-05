@@ -1,0 +1,13 @@
+use("sample_training")
+
+// Para renombrar el la clave
+db.zips.updateMany(
+    // query
+    { city: "CLEVELAND" },
+    // change => operators
+    {
+        $rename: {
+            myAttr: "my_data",
+        }
+    }
+);

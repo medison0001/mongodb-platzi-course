@@ -1,0 +1,8 @@
+use("platzi_store")
+
+// Actualizacion para un documento en especifico pero para quitar en un elemento array
+db.inventory.updateOne({ _id: 4 }, {
+    $pull: {
+        tags: "headphone"
+    }
+})

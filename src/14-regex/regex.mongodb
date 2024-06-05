@@ -1,0 +1,34 @@
+use("platzi_store")
+
+// db.inventory.find({
+//     "item.description": { $regex: /description/ }
+// })
+
+// Búsqueda no sensible a mayúsculas o minúsculas usando una expresión regular
+// 'i' significa que el patrón de búsqueda no es sensible a mayúsculas
+db.inventory.find({
+    "item.description": { $regex: /DESCRIPTION/i }
+})
+
+// Búsqueda de texto que termina con una palabra específica
+// El símbolo '$' indica que la búsqueda se realiza al final de la cadena
+db.inventory.find({
+    "item.description": { $regex: /line$/i }
+})
+
+// Búsqueda de texto que comienza con una palabra específica
+// El símbolo '^' indica que la búsqueda se realiza al inicio de la cadena
+db.inventory.find({
+    "item.description": { $regex: /^Single/i }
+})
+
+// Búsqueda de texto que comienza con una palabra específica
+// Sensible a saltos de línea (multilínea)
+// La bandera 'm' hace que '^' y '$' funcionen al inicio y al final de cada línea, no solo al principio y al final de todo el texto
+db.inventory.find({
+    "item.description": { $regex: /^s/im }
+})
+
+// Buscar en todo el texto que contengan la palabra "First" en item.description, sin importar mayúsculas o minúsculas
+db.inventory.find({ "item.description": /.*First.*/ }) // Sintaxis abreviada
+db.inventory.find({ "item.description": { $regex: /.*First.*/ } }) // Sintaxis

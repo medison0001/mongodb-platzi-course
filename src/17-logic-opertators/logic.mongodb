@@ -1,0 +1,51 @@
+use("sample_training")
+
+// and implict
+// db.inspections.find({
+//     sector: "Tax Preparers - 891",
+//     result: "Unable to Locate"
+// }).count()
+
+// and explict
+// $and [{}, {}, {}]
+// db.inspections.find({
+//     $and: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+
+// or explict
+// $or [{}, {}, {}]
+// db.inspections.find({
+//     $or: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+// nor explict
+// $nor [{}, {}, {}]
+// db.inspections.find({
+//     $nor: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "Unable to Locate" }
+//     ]
+// }).count()
+
+// db.inspections.find({
+//     $nor: [
+//         { sector: "Tax Preparers - 891" },
+//         { result: "No Violation Issued" }
+//     ]
+// },{
+//     result: 1,
+//     _id: 0
+// })
+
+// not = {} no funciona para arrays
+db.inspections.find({
+    result: { $not: {$regex: /Unable to Locate/} }
+})
+

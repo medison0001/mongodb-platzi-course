@@ -1,0 +1,13 @@
+use("sample_training")
+
+//Agregar un atributo {clave:valor}
+db.zips.updateMany(
+    // query
+    { city: "CLEVELAND" },
+    // change => operators
+    {
+        $set: {
+            myAttr: "Default",
+        }
+    }
+);

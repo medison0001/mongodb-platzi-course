@@ -1,0 +1,5 @@
+use("platzi_store")
+
+//Usando $gte (>=)
+
+db.inventory.find({ qty: { $gte: 20 } })

@@ -1,0 +1,13 @@
+use("sample_training")
+
+// Para eliminiar el atributo 
+db.zips.updateMany(
+    // query
+    { city: "CLEVELAND" },
+    // change => operators
+    {
+        $unset: {
+            my_data: null
+        }
+    }
+);

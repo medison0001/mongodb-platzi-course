@@ -1,0 +1,5 @@
+exit
+db.products.find()
+show collections
+use platzi_store
+show dbs

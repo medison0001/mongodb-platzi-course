@@ -1,0 +1,6 @@
+use("platzi_store")
+
+//Usandp $ne
+
+db.inventory.find({ qty: { $ne: 20 } })
+    // db.inventory.find({ "item.name": { $ne: "cd" } })

@@ -1,0 +1,10 @@
+use("platzi_store")
+
+db.categories.find()
+
+db.categories
+    .find()
+    .skip(4)
+    .limit(2)
+
+ 

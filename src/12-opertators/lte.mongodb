@@ -1,0 +1,5 @@
+use("platzi_store")
+
+//Usang $gte (<=)
+
+db.inventory.find({ qty: { $lte: 20 } })

@@ -1,0 +1,8 @@
+use("platzi_store")
+
+// Actualizacion para un documento pero para quitar en un elemento array masivo
+db.inventory.updateMany({}, {
+    $pull: {
+        tags: "book"
+    }
+})

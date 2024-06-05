@@ -1,0 +1,8 @@
+use("platzi_store")
+
+// Actualizacion para un documento en especifico pero para agregar en un elemento array
+db.inventory.updateOne({ _id: 4 }, {
+    $push: {
+        tags: "headphone"
+    }
+})
